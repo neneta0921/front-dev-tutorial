@@ -103,6 +103,44 @@ body {
   font-family: 'Kameron', 'Noto Sans JP', sans-serif;
 }
 
+.font-sm {
+  font-size: 14px;
+}
+
+.font-md {
+  font-size: 18px;
+}
+
+.font-lr {
+  font-size: 18px;
+}
+
+.font-lg {
+  font-size: 24px;
+}
+
+.mb-sm {
+  margin-bottom: 16px !important;
+}
+
+.mb-lg {
+  margin-bottom: 80px !important;
+}
+
+.pb-sm {
+  padding-bottom: 16px !important;
+}
+
+.pb-lg {
+  padding-bottom: 80px !important;
+}
+
+.content-width {
+  width: 90%;
+  margin: 0 auto;
+  min-width: 1070px;
+}
+
 @media screen and (min-width: 480px) {
   /******************************************************************
 
@@ -125,6 +163,24 @@ Stylesheet: 600px以上のタブレットやモニタで適用
 Stylesheet: 960px以上のモニタで適用
 
 ******************************************************************/
+  .font-sm {
+    font-size: 16px;
+  }
+  .font-md {
+    font-size: 20px;
+  }
+  .font-lr {
+    font-size: 24px;
+  }
+  .font-lg {
+    font-size: 36px;
+  }
+  .mb-lg {
+    margin-bottom: 150px !important;
+  }
+  .pb-lg {
+    padding-bottom: 150px !important;
+  }
 }
 
 @media screen and (min-width: 1280px) {
