@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./styles/venders/bootstrap-reboot.css" />
+    <link rel="stylesheet" href="./styles/venders/swiper.min.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <div id="global-container">
+      <div id="container">
+        <div id="content">
+          <div class="hero">
+            <!-- Slider main container -->
+            <div class="swiper-container">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <div class="hero__title">Enjoy Rich</div>
+                  <img src="./images/image-1.jpg" alt="hero-image" />
+                </div>
+                <div class="swiper-slide">
+                  <div class="hero__title">Fantastic</div>
+                  <img src="./images/image-2.jpg" alt="hero-image" />
+                </div>
+                <div class="swiper-slide">
+                  <div class="hero__title">Experience</div>
+                  <img src="./images/image-3.jpg" alt="hero-image" />
+                </div>
+              </div>
+              <div class="hero__footer">
+                <img
+                  class="hero__down-arrow"
+                  src="./images/arrow.svg"
+                  alt="arrow"
+                />
+                <span class="hero__scroll-text">scroll</span>
+              </div>
+              <!-- .swiper-wrapper -->
+            </div>
+            <!-- .swiper-container -->
+          </div>
+          <!-- .hero -->
+        </div>
+        <!-- #content -->
+      </div>
+      <!-- #container -->
+    </div>
+    <!-- #global-container -->
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./scripts/libraries/hero-slider.js"></script>
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>
