@@ -1,5 +1,71 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Kameron:wght@400;700&family=Noto+Sans+JP&display=swap");
+.appear.up .item {
+  transform: translateY(6px);
+}
+
+.appear.down .item {
+  transform: translateY(-6px);
+}
+
+.appear.left .item {
+  transform: translateX(40px);
+}
+
+.appear.right .item {
+  transform: translateX(-40px);
+}
+
+.appear .item {
+  transition: all 0.8s;
+  opacity: 0;
+}
+
+.appear.inview .item {
+  opacity: 1;
+  transform: none;
+}
+
+.appear.inview .item:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.appear.inview .item:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.appear.inview .item:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.appear.inview .item:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.appear.inview .item:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
+.appear.inview .item:nth-child(6) {
+  transition-delay: 0.6s;
+}
+
+.appear.inview .item:nth-child(7) {
+  transition-delay: 0.7s;
+}
+
+.appear.inview .item:nth-child(8) {
+  transition-delay: 0.8s;
+}
+
+.appear.inview .item:nth-child(9) {
+  transition-delay: 0.9s;
+}
+
+.appear.inview .item:nth-child(10) {
+  transition-delay: 1s;
+}
+
 .btn {
   position: relative;
   display: inline-block;
@@ -843,10 +909,6 @@ main {
   transition: transform 0.3s ease 1.6s;
 }
 
-.travel__title.inview::before {
-  transform: translateY(-50%);
-}
-
 .travel__img {
   height: 300px;
   transition: box-shadow 1ms linear 0.8s;
@@ -862,6 +924,10 @@ main {
 
 .travel__img.inview {
   box-shadow: inset 0 0 30px black;
+}
+
+.travel__text.inview .travel__title::before {
+  transform: translateY(-50%);
 }
 
 .houses__btn {
@@ -955,17 +1021,22 @@ main {
   top: 70%;
   transform: translateY(-50%);
   color: black;
+  transition: all 0.3s ease-in;
 }
 
-.side a,
-.side span {
+.side .tween-animate-title {
   color: black;
   text-decoration: none;
   margin: 0 40px;
   vertical-align: middle;
+  letter-spacing: 2px;
 }
 
 .side.left {
+  left: -50px;
+}
+
+.side.left.inveiw {
   left: 50px;
 }
 
@@ -975,6 +1046,10 @@ main {
 }
 
 .side.right {
+  right: -50px;
+}
+
+.side.right.inveiw {
   right: 50px;
 }
 

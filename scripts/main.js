@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 class Main {
   constructor() {
     this.header = document.querySelector('.header')
+    this.sideBar = document.querySelectorAll('.side')
     this._observers = []
     this._init()
   }
@@ -32,6 +33,14 @@ class Main {
       this.header.classList.remove('triggered')
     } else {
       this.header.classList.add('triggered')
+    }
+  }
+
+  _sideAnimation(el, inview) {
+    if (inview) {
+      this.sideBar.forEach(side => side.classList.add('inview'))
+    } else {
+      this.sideBar.forEach(side => side.classList.remove('inview'))
     }
   }
 
@@ -75,13 +84,23 @@ class Main {
     this.observers = new ScrollObserver('.cover-slide', this._inviewAnimation)
     this.observers = new ScrollObserver(
       '.tween-animate-title',
-      this._textAnimation
+      this._textAnimation,
+      { rootMargin: '-200px 0px' }
     )
     this.observers = new ScrollObserver(
       '.swiper-container',
       this._toggleSlideAnimation.bind(this),
       { once: false }
     )
-    console.log(this.observers)
+    this.observers = new ScrollObserver(
+      '.appear',
+      this._inviewAnimation.bind(this),
+      { once: false }
+    )
+    this.observers = new ScrollObserver(
+      '#main-content',
+      this._sideAnimation.bind(this),
+      { once: false, rootMargin: '-300px 0px' }
+    )
   }
 }
