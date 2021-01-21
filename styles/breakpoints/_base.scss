@@ -195,3 +195,49 @@ img {
     flex-basis: 100%;
   }
 }
+
+.logo {
+  font-size: 42px;
+  display: flex;
+
+  &__img {
+    width: 0.7em;
+  }
+
+  &__world {
+    color: $colorWineRed;
+  }
+}
+
+.footer {
+  padding: 60px 0;
+  @extend .content-width;
+
+  & .logo {
+    font-size: 38px;
+    justify-content: center;
+  }
+
+  &__nav {
+    @extend .flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__ul {
+    @extend .flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__li {
+    padding: 0;
+    margin: 10px;
+
+    & > a {
+      color: $colorSubTitle;
+    }
+  }
+}
