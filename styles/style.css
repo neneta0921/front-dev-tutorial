@@ -554,6 +554,124 @@
   padding-top: 50%;
 }
 
+.mobile-menu {
+  position: fixed;
+  right: 0;
+  top: 60px;
+  width: 300px;
+}
+
+.mobile-menu .logo {
+  padding: 0 40px;
+  font-size: 38px;
+}
+
+.mobile-menu__cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s;
+  cursor: pointer;
+  z-index: 200;
+}
+
+.mobile-menu__main {
+  padding: 0;
+  perspective: 2000px;
+  transform-style: preserve-3d;
+}
+
+.mobile-menu__item {
+  list-style: none;
+  display: block;
+  transform: translate3d(0, 0, -1000px);
+  padding: 0 40px;
+  transition: transform 0.3s, opacity 0.2s;
+  opacity: 0;
+}
+
+.mobile-menu__link {
+  display: block;
+  margin-top: 30px;
+  color: black;
+  text-decoration: none !important;
+}
+
+.mobile-menu__btn {
+  background-color: unset;
+  border: none;
+  outline: none !important;
+  cursor: pointer;
+}
+
+.mobile-menu__btn > span {
+  background-color: black;
+  width: 35px;
+  height: 2px;
+  display: block;
+  margin-bottom: 9px;
+  transition: transform 0.7s;
+}
+
+.mobile-menu__btn > span:last-child {
+  margin-bottom: 0;
+}
+
+.menu-open #container {
+  transform: translate(-300px, 60px);
+  box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
+}
+
+.menu-open .mobile-menu__cover {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-open .mobile-menu__item {
+  transform: none;
+  opacity: 1;
+}
+
+.menu-open .mobile-menu__item:nth-child(1) {
+  transition-delay: 0.07s;
+}
+
+.menu-open .mobile-menu__item:nth-child(2) {
+  transition-delay: 0.14s;
+}
+
+.menu-open .mobile-menu__item:nth-child(3) {
+  transition-delay: 0.21s;
+}
+
+.menu-open .mobile-menu__item:nth-child(4) {
+  transition-delay: 0.28s;
+}
+
+.menu-open .mobile-menu__item:nth-child(5) {
+  transition-delay: 0.35s;
+}
+
+.menu-open .mobile-menu__btn > span:nth-child(1) {
+  transition-delay: 70ms;
+  transform: translateY(11px) rotate(135deg);
+}
+
+.menu-open .mobile-menu__btn > span:nth-child(2) {
+  transition-delay: 0s;
+  transform: translateX(-18px) scaleX(0);
+}
+
+.menu-open .mobile-menu__btn > span:nth-child(3) {
+  transition-delay: 140ms;
+  transform: translateY(-11px) rotate(-135deg);
+}
+
 /******************************************************************
 
 Stylesheet: ベーススタイル
@@ -600,7 +718,7 @@ img {
   padding-bottom: 80px !important;
 }
 
-.content-width, .travel, .houses, .popular__header, .popular__container, .footer {
+.content-width, .header__inner, .travel, .houses, .popular__header, .popular__container, .footer {
   width: 90%;
   margin: 0 auto;
   max-width: 1070px;
@@ -609,19 +727,87 @@ img {
 .main-title {
   font-weight: 600;
   margin-bottom: 0;
+  display: block;
 }
 
 .sub-title {
   color: #535353;
 }
 
-.flex, .travel__inner, .houses__inner, .popular__container, .footer__nav, .footer__ul {
+.flex, .header__nav, .travel__inner, .houses__inner, .popular__container, .footer__nav, .footer__ul {
   display: flex;
   flex-direction: column;
 }
 
 .purple {
   color: #904669;
+}
+
+#content {
+  padding-top: 100px;
+}
+
+#container {
+  background-color: white;
+  position: relative;
+  z-index: 10;
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+}
+
+.header.triggered {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 10px 0 25px -10px rgba(0, 0, 0, 0.5);
+}
+
+.header__nav {
+  display: none;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .logo {
+  font-size: 38px;
+  justify-content: center;
+}
+
+.header__nav {
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.header__ul {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.header__li {
+  margin-left: 20px;
+}
+
+.header__li > a {
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 .travel__inner {
@@ -770,7 +956,7 @@ Stylesheet: 480px以上(スマホの横向き)のモニタで適用
 Stylesheet: 600px以上のタブレットやモニタで適用
 
 ******************************************************************/
-  .flex, .travel__inner, .houses__inner, .popular__container, .footer__nav, .footer__ul {
+  .flex, .header__nav, .travel__inner, .houses__inner, .popular__container, .footer__nav, .footer__ul {
     flex-direction: row;
     flex-wrap: wrap;
   }
@@ -826,6 +1012,12 @@ Stylesheet: 960px以上のモニタで適用
   }
   .pb-lg {
     padding-bottom: 150px !important;
+  }
+  .header__nav {
+    display: block;
+  }
+  .mobile-menu__btn {
+    display: none;
   }
   .travel__img {
     height: 400px;

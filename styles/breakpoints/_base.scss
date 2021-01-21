@@ -57,6 +57,7 @@ img {
   @extend .font-lg;
   font-weight: 600;
   margin-bottom: 0;
+  display: block;
 }
 
 .sub-title {
@@ -71,6 +72,76 @@ img {
 
 .purple {
   color: $colorWineRed;
+}
+
+#content {
+  padding-top: $navHeight;
+}
+
+#container {
+  background-color: $colorWhite;
+  position: relative;
+  z-index: 10;
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $navHeight;
+
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+
+  &.triggered {
+    background-color: $colorHeader;
+    box-shadow: 10px 0 25px -10px rgba(0, 0, 0, 0.5);
+  }
+
+  &__nav {
+    display: none;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @extend .content-width;
+  }
+
+  & .logo {
+    font-size: 38px;
+    justify-content: center;
+  }
+
+  &__nav {
+    @extend .flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__ul {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__li {
+    margin-left: 20px;
+
+    & > a {
+      color: $colorBlack;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
 }
 
 .travel {
