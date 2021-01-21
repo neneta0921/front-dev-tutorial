@@ -204,6 +204,10 @@
   transform: translate(-50%, -50%);
 }
 
+.hero {
+  overflow: hidden;
+}
+
 .hero__title {
   position: absolute;
   top: 50%;
@@ -425,7 +429,6 @@
 .cover-slide {
   position: relative;
   overflow: hidden;
-  margin-bottom: 80vh;
 }
 
 .cover-slide:last-child {
@@ -565,7 +568,7 @@ img {
   vertical-align: bottom;
 }
 
-.font-sm {
+.font-sm, .sub-title {
   font-size: 14px;
 }
 
@@ -573,15 +576,15 @@ img {
   font-size: 18px;
 }
 
-.font-lr {
+.font-lr, .houses__title {
   font-size: 18px;
 }
 
-.font-lg {
+.font-lg, .main-title {
   font-size: 24px;
 }
 
-.mb-sm {
+.mb-sm, .houses__title {
   margin-bottom: 16px !important;
 }
 
@@ -597,10 +600,23 @@ img {
   padding-bottom: 80px !important;
 }
 
-.content-width {
+.content-width, .houses {
   width: 90%;
   margin: 0 auto;
-  min-width: 1070px;
+  max-width: 1070px;
+}
+
+.main-title {
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.sub-title {
+  color: #535353;
+}
+
+.houses__btn {
+  text-align: center;
 }
 
 @media screen and (min-width: 480px) {
@@ -625,16 +641,16 @@ Stylesheet: 600px以上のタブレットやモニタで適用
 Stylesheet: 960px以上のモニタで適用
 
 ******************************************************************/
-  .font-sm {
+  .font-sm, .sub-title {
     font-size: 16px;
   }
   .font-md {
     font-size: 20px;
   }
-  .font-lr {
+  .font-lr, .houses__title {
     font-size: 24px;
   }
-  .font-lg {
+  .font-lg, .main-title {
     font-size: 36px;
   }
   .mb-lg {
