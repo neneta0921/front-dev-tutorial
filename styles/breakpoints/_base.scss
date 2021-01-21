@@ -124,12 +124,12 @@ main {
     justify-content: center;
   }
 
-  &__nav {
-    @extend .flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-  }
+  // &__nav {
+  //   @extend .flex;
+  //   justify-content: space-between;
+  //   align-items: center;
+  //   text-align: center;
+  // }
 
   &__ul {
     display: flex;
@@ -144,7 +144,7 @@ main {
 
     & > a {
       color: $colorBlack;
-      text-decoration: none;
+      text-decoration: none !important;
       text-transform: uppercase;
     }
   }
@@ -341,7 +341,7 @@ main {
   &.left {
     left: -50px;
 
-    &.inveiw {
+    &.inview {
       left: 50px;
     }
 
@@ -354,7 +354,7 @@ main {
   &.right {
     right: -50px;
 
-    &.inveiw {
+    &.inview {
       right: 50px;
     }
 
