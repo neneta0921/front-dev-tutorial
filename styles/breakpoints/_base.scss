@@ -81,6 +81,31 @@ img {
     justify-content: space-between;
     padding: 15px;
     background-color: $colorBgGray;
+    position: relative;
+    z-index: 0;
+  }
+
+  &__title {
+    position: relative;
+
+    @include p-base(
+      $display: none,
+      $width: 100px,
+      $height: 1px,
+      $top: 50%,
+      $left: -120px
+    ) {
+      background-color: $colorBlack;
+      transform: translateY(-50%) scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease 1.6s;
+    }
+
+    &.inview {
+      &::before {
+        transform: translateY(-50%);
+      }
+    }
   }
 
   &__sub {
@@ -90,11 +115,18 @@ img {
   &__img {
     @extend .mb-sm;
     height: 300px;
+    transition: box-shadow 1ms linear 0.8s;
 
     & > img {
       object-fit: cover;
       height: 100%;
       width: 100%;
+      position: relative;
+      z-index: -1;
+    }
+
+    &.inview {
+      box-shadow: inset 0 0 30px $colorBlack;
     }
   }
 
