@@ -86,3 +86,46 @@ img {
     flex-basis: 100%;
   }
 }
+
+.popular {
+  &__inner {
+    position: relative;
+    @include p-base($top: 10%, $height: 90%) {
+      background-color: $colorBgGray;
+    }
+  }
+
+  &__header {
+    @extend .content-width;
+  }
+
+  &__container {
+    @extend .flex;
+    @extend .content-width;
+    @extend .pb-sm;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__img {
+    height: 150px;
+    overflow: hidden;
+    margin-bottom: 5px;
+
+    & > img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__title {
+    @extend .font-md;
+    @extend .mb-sm;
+  }
+
+  &__btn {
+    text-align: center;
+    flex-basis: 100%;
+  }
+}
